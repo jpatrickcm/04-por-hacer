@@ -56,12 +56,10 @@ const actualizar = (descripcion, completado = true) => {
     }
 }
 
-const borrar = (descripcion, borrado = true) => {
+const borrar = (descripcion) => {
     cargarDB();
 
-    let nuevoListado = listadoPorHacer.filter(tarea => {
-        return tarea.descripcion != descripcion
-    })
+    let nuevoListado = listadoPorHacer.filter(tarea => tarea.descripcion != descripcion);
 
     if (nuevoListado.length === listadoPorHacer.length) {
         return false;
